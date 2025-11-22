@@ -27,13 +27,16 @@ public class ListaCircularDoble {
     
     public String mostrarIntegrantes() {
         if (cabeza == null) return "No hay integrantes.";
-        StringBuilder sb = new StringBuilder();
+
+        String resultado = "";
         Integrante actual = cabeza;
+
         do {
-            sb.append("Integrante: ").append(actual.nombre).append("\n");
+            resultado = resultado + "Integrante: " + actual.nombre + "\n";
             actual = actual.siguiente;
         } while (actual != cabeza);
-        return sb.toString();
+
+        return resultado;
     }
     
     public String mostrarAdelante() {

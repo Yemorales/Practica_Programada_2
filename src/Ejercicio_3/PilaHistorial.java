@@ -46,16 +46,5 @@ public class PilaHistorial {
     public boolean estaVacia() {
         return tope == null;
     }
-
-    //public String mostrar() {
-    //    if (tope == null) return "No hay cambios.";
-    //    StringBuilder sb = new StringBuilder();
-    //    NodoHistorial actual = tope;
-    //     while (actual != null) {
-    //        sb.append("Cambio: ").append(actual.cambio).append("\n");
-    //        actual = actual.siguiente;
-    //    }
-    //    return sb.toString();
-    //}
     
 }

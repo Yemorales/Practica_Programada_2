@@ -47,15 +47,4 @@ public class ColaTareas {
     public boolean estaVacia() {
         return frente == null;
     }
-
-    //public String mostrar() {
-    //    if (frente == null) return "No hay tareas.";
-    //    StringBuilder sb = new StringBuilder();
-    //    NodoTareas actual = frente;
-    //    while (actual != null) {
-    //        sb.append("Tarea: ").append(actual.tarea).append("\n");
-    //        actual = actual.siguiente;
-    //    }
-    //    return sb.toString();
-    //}  
 }
