@@ -8,11 +8,12 @@ package Ejercicio_3;
  *
  * @author yedel
  */
-public class ListaSimple {
+public class ListaHitos {
     private Hito cabeza;
 
     public void agregarHito(String descripcion) {
         Hito nuevo = new Hito(descripcion);
+        
         if (cabeza == null) {
             cabeza = nuevo;
         } else {
@@ -25,14 +26,18 @@ public class ListaSimple {
     }
     
     public String mostrarHitos() {
-        if (cabeza == null) return "No hay hitos.";
-        StringBuilder sb = new StringBuilder();
-        Hito actual = cabeza;
-        while (actual != null) {
-            sb.append("Hito: ").append(actual.descripcion).append("\n");
-            actual = actual.siguiente;
+        if (cabeza == null) {
+            return "No hay hitos.";
         }
-        return sb.toString();
+        String texto = "";
+        Hito temporal = cabeza;
+        
+        while (temporal != null){
+            texto = texto + temporal.descripcion + "\n";
+            temporal = temporal.siguiente;
+        }
+        
+        return texto;
     }
 
 
