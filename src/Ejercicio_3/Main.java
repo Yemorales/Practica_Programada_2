@@ -29,12 +29,12 @@ public class Main {
                 "Proyecto de colaboracion\n"        +
                 "=============================\n"     +
                 "1. agregar integrante\n"           +
-                "2. ver integrantes (hacia delanate)\n"   +
+                "2. ver integrantes (hacia delante)\n"   +
                 "3. ver integrantes (hacia atras)\n"      +
                 "4. agregar tarea\n"                +
-                "5. asignar siguiente tarea\n"      +
+                "5. asignar tarea\n"      +
                 "6. registrar cambio\n"             +
-                "7. ver lutimo cambio\n"            +
+                "7. ver ultimo cambio\n"            +
                 "8. deshacer cambio\n"              +
                 "9. agregar hito\n"                 +
                 "10. ver hitos\n"                   +

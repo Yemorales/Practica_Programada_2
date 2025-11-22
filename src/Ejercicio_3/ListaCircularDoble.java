@@ -6,64 +6,54 @@ package Ejercicio_3;
  * @author yedel
  */
 public class ListaCircularDoble {
-    private Integrante cabeza = null;
+    private Integrante cabeza;
 
     public void agregarIntegrante(String nombre) {
-        Integrante nuevo = new Integrante(nombre);
-        
+        Integrante nuevo = new Integrante();
+        nuevo.setNombre(nombre);
         if (cabeza == null) {
             cabeza = nuevo;
-            cabeza.siguiente = cabeza;
-            cabeza.anterior = cabeza;
+            cabeza.setSiguiente(cabeza);
+            cabeza.setAnterior(cabeza);
         } else {            
-            Integrante ultimo = cabeza.anterior;
-            
-            nuevo.siguiente = cabeza;
-            nuevo.anterior = ultimo;
-            ultimo.siguiente = nuevo;
-            cabeza.anterior = nuevo;
+            Integrante ultimo = cabeza.getAnterior();
+            nuevo.setSiguiente(cabeza);
+            nuevo.setAnterior(ultimo);
+            ultimo.setSiguiente(nuevo);
+            cabeza.setAnterior(nuevo);
         }
     }
     
     public String mostrarIntegrantes() {
         if (cabeza == null) return "No hay integrantes.";
-
         String resultado = "";
         Integrante actual = cabeza;
-
         do {
-            resultado = resultado + "Integrante: " + actual.nombre + "\n";
-            actual = actual.siguiente;
+            resultado = resultado + "Integrante: " + actual.getNombre() + "\n";
+            actual = actual.getSiguiente();
         } while (actual != cabeza);
-
         return resultado;
     }
     
     public String mostrarAdelante() {
         if (cabeza == null) return "No hay integrantes.\n";
-
         String texto = "";
         Integrante temp = cabeza;
-
         do {
-            texto = texto + temp.nombre + "\n";
-            temp = temp.siguiente;
+            texto = texto + temp.getNombre() + "\n";
+            temp = temp.getSiguiente();
         } while (temp != cabeza);
-
         return texto;
     }
     
         public String mostrarAtras() {
         if (cabeza == null) return "No hay integrantes.\n";
-
         String texto = "";
-        Integrante temp = cabeza.anterior;
-
+        Integrante temp = cabeza.getAnterior();
         do {
-            texto = texto + temp.nombre + "\n";
-            temp = temp.anterior;
-        } while (temp != cabeza.anterior);
-
+            texto = texto + temp.getNombre() + "\n";
+            temp = temp.getAnterior();
+        } while (temp != cabeza.getAnterior());
         return texto;
     }
 }
